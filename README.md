@@ -19,6 +19,7 @@ MySQL
 HTML
 CSS
 Bootstrap
+
 Installation Instructions:
 
 Clone this repository to your local machine.
