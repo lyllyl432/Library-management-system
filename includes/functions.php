@@ -24,8 +24,9 @@ function invalidAdmin($conn, $userName, $pwd){
                 }
         }
     }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);    
 }
-
 function storeCategory($conn, $categoryName){
     $sql = "INSERT INTO category(courses)
             VALUES(?);";
@@ -35,13 +36,24 @@ function storeCategory($conn, $categoryName){
         exit();
     }
     mysqli_stmt_bind_param($stmt, "s", $categoryName);
-  
-    if(!mysqli_stmt_execute($stmt)){
-        $_SESSION["category_execution"] = "not executed";
-        header("location: ../admin.php?error=executionerror");
-        exit();
-    }
-    //duplicate modal feature
+    // mysqli_stmt_execute($stmt);
+    try{
+        if( mysqli_stmt_execute($stmt)){
+            $_SESSION["execution"] = "Category added successfully";
+            header("location: ../category.php?error=executed");
+            exit();
+        }
+    }catch(Exception $e){
+        if (strpos(mysqli_error($conn), "Duplicate entry") !== false){
+            $_SESSION["execution"] = "Category added successfully";
+            header("location: ../category.php?error=notexecuted");
+            exit();
+        } 
+    }  
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);    
+}
+
+
     
 
-}
