@@ -15,7 +15,7 @@ include "includes/header.inc.php";
                             <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                     </div>
                     <div class="mb-3 input-group">
-                        <input type="password" id="password" class="form-control" name="password"
+                        <input type="password" id="password" class="form-control" name="pwd"
                             placeholder="input Password">
                             <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
                     </div>
