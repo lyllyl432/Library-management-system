@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>hello world</h1>
+    <?php
+    echo print_r(PDO::getAvailableDrivers());
+    ?>
 </body>
 </html>

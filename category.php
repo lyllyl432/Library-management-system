@@ -8,17 +8,17 @@ include "includes/show-category.inc.php";
 </form>
 <?php
     if(isset($_SESSION["delete-success"])){
-        echo"<div>${$_SESSION["delete-success"]}</div>";
+        echo"<div>{$_SESSION["delete-success"]}</div>";
     }
     unset($_SESSION["delete-success"]);
     if(isset($_SESSION["delete-error"])){
-        echo"<div>${$_SESSION["delete-error"]}</div>";
+        echo"<div>{$_SESSION["delete-error"]}</div>";
     }
     unset($_SESSION["delete-error"]);
 ?>
 <ul>
     <?php
-    while($row = mysqli_fetch_assoc($resultObject)){
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     ?>
     <li><?=$row["courses"]?>
     <form action="includes/category-delete.inc.php" method="POST">
@@ -27,10 +27,12 @@ include "includes/show-category.inc.php";
     </form>
     <form action="includes/category-edit.inc.php" method="POST">
         <input type="hidden" name="id" value="<?= $row["id"]?>">
-        <input type="submit" name="delete-category" value="edit">
+        <input type="text" name="edit-category" value="">
+        <button type="submit">Edit</button>
     </form>
 </li>
     <?php
+    $conn = null;
     }
     ?>
 </ul>
