@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include "includes/show-category.inc.php";
 ?>
 <form action="includes/category.inc.php" method="post">

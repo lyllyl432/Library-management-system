@@ -1,4 +1,5 @@
 <?php
+session_start();
 function invalidAdmin($conn, $userName, $pwd){
     $result;
     $sql = "SELECT admin.admin_id, admin.password
@@ -34,29 +35,6 @@ function storeCategory($conn, $categoryName){
         header("location: ../category.php?error=notexecuted");
     }
     exit();
-
-    // $stmt = mysqli_stmt_init($conn);
-    // if(!mysqli_stmt_prepare($stmt, $sql)){
-    //     header("location: ../category.php?error=stmtfailed");
-    //     exit();
-    // }
-    // mysqli_stmt_bind_param($stmt, "s", $categoryName);
-    // // mysqli_stmt_execute($stmt);
-    // try{
-    //     if( mysqli_stmt_execute($stmt)){
-    //         $_SESSION["execution"] = "Category added successfully";
-    //         header("location: ../category.php?error=executed");
-    //         exit();
-    //     }
-    // }catch(Exception $e){
-    //     if (strpos(mysqli_error($conn), "Duplicate entry") !== false){
-    //         $_SESSION["execution"] = "Category added successfully";
-    //         header("location: ../category.php?error=notexecuted");
-    //         exit();
-    //     } 
-    // }  
-    // mysqli_stmt_close($stmt);
-    // mysqli_close($conn);    
 }
 
 

@@ -1,8 +1,10 @@
 <?php
+session_start();
 include "database.inc.php";
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     $id = $_POST["id"];
-    $category = $_POST["edit-category"];
+    $isbn = $_POST["isbn"];
+    $title = $_POST["id"];
     $sql = "UPDATE category SET courses = ? WHERE id = ?;";
     $stmt  = $conn->prepare($sql);
     $stmt->execute([$category, $id]);
@@ -15,6 +17,4 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         header("location: ../category.php");
     }
     exit();
-    
-
 }
