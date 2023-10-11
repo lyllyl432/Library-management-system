@@ -1,0 +1,23 @@
+{
+  "name": "librarysystem",
+  "version": "1.0.0",
+  "description": "Project Description:\r A comprehensive Library Management System designed to simplify the process of managing library resources, tracking books, managing user accounts, and ensuring smooth library operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyllyl432/Library-management-system.git"
+  },
+  "keywords": [],
+  "author": "lyl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyllyl432/Library-management-system/issues"
+  },
+  "homepage": "https://github.com/lyllyl432/Library-management-system#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "database.inc.php";
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     $id = intval($_POST["id"]);

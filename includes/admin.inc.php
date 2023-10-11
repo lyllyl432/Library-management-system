@@ -9,11 +9,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     if(invalidAdmin($conn, $userName, $pwd) !== false){
         header("location: ../admin.php?error=adminnotfound");
-        exit();
     }else{
         header("location: ../home.php");
     }
-
-
-    
+    exit(); 
 }
